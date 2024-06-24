@@ -7,13 +7,13 @@ import './App.css';
 
 function App() {
     return (
-        <BrowserRouter basename="/notepadx">
+        <BrowserRouter>
             <div className="main-container bg-white dark:bg-gray-900 min-h-screen transition-colors duration-250 relative">
                 <div className="flex items-center justify-between w-full p-4">
                     <div className="w-full ">
                         <Routes>
-                            <Route path="/edit" element={<Editor />} />
-                            <Route path="/" element={<Viewer />} />
+                            <Route path="/notepadx/edit" element={<Editor />} />
+                            <Route path="/notepadx/" element={<Viewer />} />
                         </Routes>
                     </div>
                     <div className="absolute bottom-4 right-4">
@@ -22,6 +22,7 @@ function App() {
                 </div>
             </div>
         </BrowserRouter>
+
     );
 }
 
