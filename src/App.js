@@ -1,25 +1,28 @@
-import logo from './logo.svg';
+import React from 'react';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import ThemeSwitcher from './components/ThemeSwitcher';
+import Editor from './components/Editor';
+import Viewer from './components/Viewer';
 import './App.css';
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    return (
+        <Router>
+            <div className="main-container bg-white dark:bg-gray-900 min-h-screen transition-colors duration-250 relative">
+                <div className="flex items-center justify-between w-full p-4">
+                    <div className="w-full ">
+                        <Routes>
+                            <Route path="/edit" element={<Editor />} />
+                            <Route path="/" element={<Viewer />} />
+                        </Routes>
+                    </div>
+                    <div className="absolute bottom-4 right-4">
+                        <ThemeSwitcher />
+                    </div>
+                </div>
+            </div>
+        </Router>
+    );
 }
 
 export default App;
