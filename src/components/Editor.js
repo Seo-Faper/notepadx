@@ -17,7 +17,7 @@ const Editor = () => {
         if (compressedTitle) params.set('title', compressedTitle);
         if (compressedContent) params.set('content', compressedContent);
         
-        navigate(`/notepadx/edit?${params.toString()}`, { replace: true });
+        navigate(`/edit?${params.toString()}`, { replace: true });
     }, [title, content, navigate]);
 
     useEffect(() => {
