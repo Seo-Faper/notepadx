@@ -7,6 +7,7 @@ import './App.css';
 
 function App() {
     return (
+        <BrowserRouter basename="/notepadx">
         <Router>
             <div className="main-container bg-white dark:bg-gray-900 min-h-screen transition-colors duration-250 relative">
                 <div className="flex items-center justify-between w-full p-4">
@@ -22,6 +23,7 @@ function App() {
                 </div>
             </div>
         </Router>
+        </BrowserRouter>
     );
 }
 
