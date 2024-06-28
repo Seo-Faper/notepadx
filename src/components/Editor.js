@@ -17,7 +17,7 @@ const Editor = () => {
         if (compressedTitle) params.set('title', compressedTitle);
         if (compressedContent) params.set('content', compressedContent);
         
-        navigate(`/edit?${params.toString()}`, { replace: true });
+        navigate(`/notepadx/edit?${params.toString()}`, { replace: true });
     }, [title, content, navigate]);
 
     useEffect(() => {
@@ -27,7 +27,7 @@ const Editor = () => {
                 const compressedTitle = compressToEncodedURIComponent(title);
                 const compressedContent = compressToEncodedURIComponent(content);
                 
-                const url = `${window.location.origin}/notepadx/?title=${encodeURIComponent(compressedTitle)}&content=${encodeURIComponent(compressedContent)}`;
+                const url = `${window.location.origin}/?title=${encodeURIComponent(compressedTitle)}&content=${encodeURIComponent(compressedContent)}`;
                 
                 navigator.clipboard.writeText(url).then(() => {
                     alert('URL이 복사되었습니다.');
