@@ -30,7 +30,7 @@ const Editor = () => {
                 const url = `${window.location.origin}/notepadx/?title=${encodeURIComponent(compressedTitle)}&content=${encodeURIComponent(compressedContent)}`;
                 
                 navigator.clipboard.writeText(url).then(() => {
-                    alert('URL이 복사되었습니다.');
+                    alert('URL copyed.');
                 });
             }
         };
